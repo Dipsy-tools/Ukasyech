@@ -1,59 +1,128 @@
-body {
+/* CSS Umum */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: linear-gradient(135deg, #ff7b00, #ff00a6);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 .container {
     text-align: center;
+    width: 100%;
     max-width: 400px;
-    width: 90%;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.profile {
+    margin-bottom: 20px;
 }
 
 .profile-pic {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 5px solid #fff;
     margin-bottom: 15px;
 }
 
-.profile h1 {
-    font-size: 24px;
-    margin: 0;
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.profile p {
-    font-size: 14px;
-    opacity: 0.8;
+p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 25px;
 }
 
 .links {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
+/* Link Button */
 .link-button {
-    display: block;
-    margin: 10px auto;
     text-decoration: none;
-    color: #fff;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ff007f, #ff7b00);
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .link-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(106, 17, 203, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.link-button:active {
+    transform: translateY(0);
+}
+
+i {
+    font-size: 24px;
+}
+
+/* Efek Teks Berjalan */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.marquee p {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    animation: marquee 8s linear infinite;
+}
+
+/* Animasi Teks Berjalan */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Copyright Text */
+.copyright {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ddd;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #fff;
+}
+
+.copyright p {
+    margin: 0;
+    font-weight: bold;
 }
